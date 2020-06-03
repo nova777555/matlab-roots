@@ -1,0 +1,11 @@
+a=0,b=4*pi;
+x=linspace(a,b,200);
+f='x.*sin(x)-cos(x)';
+plot(x,eval(f),x,0*x,':');
+grid on;
+xlabel('x');
+ylabel('y');
+z=ginput(1);
+[zr,fr]=fzero(f,z(1));
+hold on;
+plot(zr,fr,'r*',z(1),z(2),'g*');
